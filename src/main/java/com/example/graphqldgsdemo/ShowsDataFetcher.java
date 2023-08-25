@@ -1,7 +1,7 @@
 package com.example.graphqldgsdemo;
 
 import com.netflix.graphql.dgs.DgsComponent;
-import com.netflix.graphql.dgs.DgsQuery;
+import com.netflix.graphql.dgs.DgsData;
 import com.netflix.graphql.dgs.InputArgument;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class ShowsDataFetcher {
             new Show("Orange is the New Black", 2013)
     );
 
-    @DgsQuery
+    @DgsData(parentType = DgsConstants.QUERY_TYPE, field = DgsConstants.QUERY.Shows)
     public List<Show> shows(@InputArgument String titleFilter) {
         if (titleFilter == null) {
             return shows;
