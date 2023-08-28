@@ -3,6 +3,22 @@ type Query {
 }
 
 type Show {
+    id: ID!
     title: String
     releaseYear: Int
+    actors: [Actor]
+    showType: ShowType
+}
+
+type Actor {
+    name: String
+    quality: Int
+}
+
+enum ShowType {
+  ADVENTURE
+  FANTASY
+  MYSTERY
+  CRIME
+  DRAMA
 }
